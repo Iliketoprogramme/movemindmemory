@@ -3,38 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alzheimer's Support App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <title>Move Mind Memory</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">[Your Logo]</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#about-app">About Our App</a></li>
+                <li><a href="#about-team">About Our Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Empowering Alzheimer's Patients</h1>
+                <h2>Move Mind Memory</h2>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Empowering Alzheimer's Patients</h1>
-        <p>A simple and intuitive app to support daily life</p>
-        <a href="#features" class="cta-button">Learn More</a>
+    <section id="about-app">
+        <h2>About Our App</h2>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'features')">Features</button>
+            <button class="tab-button" onclick="openTab(event, 'functions')">Functions</button>
+        </div>
+        <div id="features" class="tab-content">
+            <p>Our app provides daily reminders, cognitive exercises, and seamless family connectivity.</p>
+        </div>
+        <div id="functions" class="tab-content">
+            <p>Using AI-powered tracking, the app adapts to the needs of Alzheimer's patients.</p>
+        </div>
     </section>
 
-    <section id="about" class="parallax">
+    <section id="about-team">
         <h2>Our Vision</h2>
         <p>We aim to create a user-friendly app that helps Alzheimer's patients maintain their independence.</p>
-    </section>
-
-    <section id="features">
-        <h2>Key Features</h2>
-        <div class="feature-card">Daily Reminders</div>
-        <div class="feature-card">Cognitive Exercises</div>
-        <div class="feature-card">Family Connectivity</div>
+        <div class="team-profiles">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <p>Teammate 1 - Role & Description</p>
+            </div>
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <p>Teammate 2 - Role & Description</p>
+            </div>
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <p>Teammate 3 - Role & Description</p>
+            </div>
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <p>Teammate 4 - Role & Description</p>
+            </div>
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <p>Teammate 5 - Role & Description</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -43,7 +72,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Alzheimer's Support App. All rights reserved.</p>
+        <p>&copy; 2024 Move Mind Memory. All rights reserved.</p>
     </footer>
 </body>
 </html>
