@@ -171,7 +171,7 @@ h6 {
 .line {
     height: 2px;
     width: 50px;
-    background: #8e1efc;
+    background: #8B5B29;
     display: block;
     margin: 20px auto 20px;
 }
@@ -182,7 +182,7 @@ h6 {
     left: 50%;
     width: 150px;
     height: 2px;
-    border-bottom: 2px dashed #8e1efc;
+    border-bottom: 2px dashed #8B5B29;
     margin-left: -75px;
 }
 
@@ -251,7 +251,7 @@ h6 {
 }
 
 .video-overlay {
-    background: linear-gradient(to left, rgba(122, 96, 255, 0.90), rgba(205, 159, 250, 0.90));
+    background: linear-gradient(to left, rgb(255 209 96 / 90%), rgba(205, 159, 250, 0.90));
 }
 
 .video-section h3 {
@@ -266,7 +266,7 @@ h6 {
     height: 70px;
     border-radius: 100px;
     background: #ffffff;
-    color: #8e1efc;
+    color: #8B5B29;
     font-size: 30px;
     line-height: 70px;
     margin: 0 auto;
@@ -334,10 +334,10 @@ h6 {
     width: 50px;
     height: 50px;
     border-radius: 100px;
-    color: rgb(142, 30, 252);
+    color: rgb(139 91 41);
     font-size: 18px;
     line-height: 50px;
-    border: 1px solid rgb(142, 30, 252);
+    border: 1px solid rgb(139 91 41);
 }
 
 .team {
@@ -355,7 +355,7 @@ h6 {
 }
 
 .team-detail h4 {
-    color: rgb(142, 30, 252);
+    color: rgb(139 91 41);
     margin-top: 20px;
     font-size: 17px;
     margin-bottom: 0px;
@@ -557,7 +557,7 @@ input {
 @media all and (max-width: 991px) {
     .navbar .navbar-collapse {
         overflow: auto;
-        background: rgb(213, 198, 221);
+        background: rgb(222 211 183);
         color: #fff !important;
         text-align: center;
         padding: 10px 0;
