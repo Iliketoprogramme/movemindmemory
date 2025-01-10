@@ -321,28 +321,42 @@ Positive reinforcement
     let currentIndex = 0;
     const items = $('.slider-item');
     const totalItems = items.length;
-
-    $('#nextBtn').click(function() {
-      if (currentIndex < totalItems - 1) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-
-    $('#prevBtn').click(function() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
+    const slideInterval = 3000; // 3초
+    let autoSlide;
 
     function updateSlider() {
       const offset = -currentIndex * 470; // 각 슬라이더 아이템의 너비
       $('.slider').css('transform', 'translateX(' + offset + 'px)');
     }
+
+    $('#nextBtn').click(function() {
+      currentIndex = (currentIndex + 1) % totalItems; // 다음 인덱스, 마지막 후 첫 번째로 돌아감
+      updateSlider();
+    });
+
+    $('#prevBtn').click(function() {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems; // 이전 인덱스, 첫 번째 전 후 마지막으로 돌아감
+      updateSlider();
+    });
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalItems; // 다음 인덱스
+        updateSlider();
+      }, slideInterval);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    // 자동 슬라이드를 시작합니다.
+    startAutoSlide();
+
+    // 마우스 오버 시 자동 슬라이드를 중지합니다.
+    $('.bx-wrapper').hover(stopAutoSlide, startAutoSlide);
   });
 </script>
-
 
 <!-------FAQ Start------->
 <section class="faq section-padding prelative" data-scroll-index="5">
