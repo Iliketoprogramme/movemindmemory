@@ -253,10 +253,10 @@
             <div class="offset-md-2 col-md-8 col-sm-12">
               <div class="bx-wrapper" style="max-width: 100%;">
                 <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; height: 412px;">
-                  <div class="slider" style="display: flex; transition: transform 0.5s ease;">
+                  <div class="slider" id="testimonialSlider" style="display: flex; transition: transform 0.5s ease;">
                     <div class="slider-item" style="flex: 0 0 470px;">
-                      <div class="test-img"><i class="fa fa-user-circle" aria-hidden="true" style="font-size: 157px;"></i></div>
-                      <div class="test-text"><span class="title"><span>Ben Hong</span>CTO</span>
+                      <div class="test-img"><i class="fa fa-cogs" aria-hidden="true" style="font-size: 78px;"></i></div>
+                      <div class="test-text"><span class="title"><span>Ben Hong</span> CTO</span>
                         Built Website
                         Interested in engineering, medical and sciences
                         Technical experience in CNN/PPCA models, spectrogram visualizations, and MongoDB projects.
@@ -264,8 +264,8 @@
                       </div>
                     </div>
                     <div class="slider-item" style="flex: 0 0 470px;">
-                      <div class="test-img"><i class="fa fa-user-circle" aria-hidden="true" style="font-size: 157px;"></i></div>
-                      <div class="test-text"><span class="title"><span>Leah Kang</span>COO</span>
+                      <div class="test-img"><i class="fa fa-brain" aria-hidden="true" style="font-size: 78px;"></i></div>
+                      <div class="test-text"><span class="title"><span>Leah Kang</span> COO</span>
                         Strong interest in psychology and neuroscience
                         President of psychology club
                         VP of medical club
@@ -273,8 +273,8 @@
                       </div>
                     </div>
                     <div class="slider-item" style="flex: 0 0 470px;">
-                      <div class="test-img"><i class="fa fa-user-circle" aria-hidden="true" style="font-size: 157px;"></i></div>
-                      <div class="test-text"><span class="title"><span>Iris Nam</span>CEO</span>
+                      <div class="test-img"><i class="fa fa-lightbulb" aria-hidden="true" style="font-size: 78px;"></i></div>
+                      <div class="test-text"><span class="title"><span>Iris Nam</span> CEO</span>
                         Team leader
                         Focused on business modeling, economic analysis and project service refinement
                         VP of economics club
@@ -283,16 +283,16 @@
                       </div>
                     </div>
                     <div class="slider-item" style="flex: 0 0 470px;">
-                      <div class="test-img"><i class="fa fa-user-circle" aria-hidden="true" style="font-size: 157px;"></i></div>
-                      <div class="test-text"><span class="title"><span>David Park</span>CPO</span>
+                      <div class="test-img"><i class="fa fa-users" aria-hidden="true" style="font-size: 78px;"></i></div>
+                      <div class="test-text"><span class="title"><span>David Park</span> CPO</span>
                         President of business club
                         Invested in business strategy and analysis
                         Experienced in AD research during an internship at a diagnostic firm
                       </div>
                     </div>
                     <div class="slider-item" style="flex: 0 0 470px;">
-                      <div class="test-img"><i class="fa fa-user-circle" aria-hidden="true" style="font-size: 157px;"></i></div>
-                      <div class="test-text"><span class="title"><span>Leo Park</span>CTO</span>
+                      <div class="test-img"><i class="fa fa-rocket" aria-hidden="true" style="font-size: 78px;"></i></div>
+                      <div class="test-text"><span class="title"><span>Leo Park</span> CTO</span>
                         Skilled in technological solutions
                         Expertise in programming (C++, C#, MySQL, ASP.NET Core) and Unity-based front-end development
                         Experience with backend database systems and web development projects
@@ -314,31 +314,33 @@
     </div>
   </div>
 </section>
-<!-------Testimonial End------->
+<!-------Testimonial End-------> 
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function() {
-    let currentIndex = 0;
-    const items = $('.slider-item');
-    const totalItems = items.length;
+  const slider = document.getElementById('testimonialSlider');
+  const items = slider.children;
+  let currentIndex = 0;
 
-    function updateSlider() {
-      const offset = -currentIndex * 470; // 각 슬라이더 아이템의 너비
-      $('.slider').css('transform', 'translateX(' + offset + 'px)');
+  document.getElementById('nextBtn').addEventListener('click', function() {
+    currentIndex++;
+    if (currentIndex >= items.length) {
+      currentIndex = 0; // Reset to first item
     }
-
-    $('#nextBtn').click(function() {
-      currentIndex = (currentIndex + 1) % totalItems; // 다음 인덱스, 마지막 후 첫 번째로 돌아감
-      updateSlider();
-    });
-
-    $('#prevBtn').click(function() {
-      currentIndex = (currentIndex - 1 + totalItems) % totalItems; // 이전 인덱스, 첫 번째 전 후 마지막으로 돌아감
-      updateSlider();
-    });
+    updateSlider();
   });
+
+  document.getElementById('prevBtn').addEventListener('click', function() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = items.length - 1; // Go to last item
+    }
+    updateSlider();
+  });
+
+  function updateSlider() {
+    const offset = -currentIndex * 470; // Assuming each item has a width of 470px
+    slider.style.transform = `translateX(${offset}px)`;
+  }
 </script>
 
 <!-------FAQs Start------->
