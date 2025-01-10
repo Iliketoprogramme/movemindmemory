@@ -147,6 +147,12 @@ h6 {
     height: auto; /* 자동 높이 조정 */
 }
 
+.svg-hero {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 이미지 아래에 여백이 생기지 않도록 설정 */
+}
+
 .banner-text {
     padding-right: 80px;
     margin: 50px 0px 0px;
