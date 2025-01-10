@@ -143,8 +143,7 @@ h6 {
     position: absolute;
     bottom: 0;
     left: 0; /* 왼쪽 위치 조정 */
-    right: 0; /* 오른쪽 위치 조정 */
-    width: 100%; /* 전체 너비 */
+    width: 100vw; /* 뷰포트 너비에 맞춤 */
     height: auto; /* 자동 높이 조정 */
 }
 
