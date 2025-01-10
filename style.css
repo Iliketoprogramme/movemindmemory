@@ -271,7 +271,7 @@ h6 {
 }
 
 .video-section {
-    background: url(images/video-bg.jpg) no-repeat fixed center;
+    background: url(bg.jpg) no-repeat fixed center;
     background-size: cover;
     overflow: hidden;
 }
